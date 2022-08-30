@@ -7,8 +7,6 @@
 
 <h2>Игры для мозга. Набор мини игр</h2>
 
-<hr>
-
 <ol>
  <li>Проверка на четность. (brain-even)</li>
  <li>Решение математических примеров. (brain-calc)</li>
@@ -21,11 +19,9 @@
 
 <h3> Установка </h3>
 Используйте менеджер пакетов pip для установки Brain Games <br>
-«»
-```python
-pip install --user git+https://github.com/znammikhail/python-project-lvl1
-```
-«»
+
+    pip install --user git+https://github.com/znammikhail/python-project-lvl1
+
 <hr>
 
 <h3> Пример установки пакета и игры brain-even </h3>
