@@ -20,11 +20,12 @@
 <hr>
 
 <h3> Установка </h3>
-Используйте менеджер пакетов  для установки Brain Games
+Используйте менеджер пакетов pip для установки Brain Games <br>
+«»
 ```python
 pip install --user git+https://github.com/znammikhail/python-project-lvl1
 ```
-
+«»
 <hr>
 
 <h3> Пример установки пакета и игры brain-even </h3>
