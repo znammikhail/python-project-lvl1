@@ -1,19 +1,29 @@
-"""brain-gcd game."""
-import prompt
+"""Brain-gcd game."""
 import random
-from brain_games.games_logic import welcome_user, result, gcd, NUMBER_OF_ROUNDS
 
 
-def brain_gcd():
-    """brain-gcd game."""
-    name = welcome_user()
-    print('Find the greatest common divisor of given numbers.')
+DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
-    count = 0
-    while count < NUMBER_OF_ROUNDS:
-        number_1 = random.randint(1, 100)
-        number_2 = random.randint(1, 100)
-        print(f'Question: {number_1} {number_2}')
-        answer = prompt.integer('Your answer: ')
-        correct_answer = gcd(number_1, number_2)
-        count = result(answer, correct_answer, name, count)
+
+def gcd(a, b):
+    """Find gcd, return gcd."""
+    while a != 0 and b != 0:
+        if a > b:
+            a = a % b
+        else:
+            b = b % a
+    return (a + b)
+
+
+def correct_answer(number_1, number_2):
+    """Return correct answer."""
+    return str(gcd(number_1, number_2))
+
+
+def make_question():
+    """Generate game question."""
+    number_1 = random.randint(1, 100)
+    number_2 = random.randint(1, 100)
+    question = f'Question: {number_1} {number_2}'
+    answer = correct_answer(number_1, number_2)
+    return (question, answer)

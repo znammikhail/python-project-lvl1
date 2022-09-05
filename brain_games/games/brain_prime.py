@@ -1,19 +1,26 @@
 """brain-prime game."""
-import prompt
 import random
-from brain_games.games_logic import welcome_user, result
-from brain_games.games_logic import is_prime, NUMBER_OF_ROUNDS
 
 
-def brain_prime():
-    """brain-prime game."""
-    name = welcome_user()
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
-    count = 0
-    while count < NUMBER_OF_ROUNDS:
-        simple = random.randint(1, 100)
-        print(f'Question: {simple}')
-        answer = prompt.string('Your answer: ')
-        correct_answer = 'yes' if is_prime(simple) else 'no'
-        count = result(answer, correct_answer, name, count)
+
+def is_prime(n):
+    """Prime number or not."""
+    d = 2
+    while n % d != 0:
+        d += 1
+    return d == n
+
+
+def correct_answer(simple):
+    """Return correct answer."""
+    return 'yes' if is_prime(simple) else 'no'
+
+
+def make_question():
+    """Generate game question."""
+    simple = random.randint(1, 100)
+    question = f'Question: {simple}'
+    answer = correct_answer(simple)
+    return (question, answer)

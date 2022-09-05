@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""logic games."""
+"""Game engine functions."""
 import prompt
 
 NUMBER_OF_ROUNDS = 3
@@ -28,19 +28,13 @@ def result(answer, correct_answer, name, count):
     return count
 
 
-def gcd(a, b):
-    """Find gcd, return gcd."""
-    while a != 0 and b != 0:
-        if a > b:
-            a = a % b
-        else:
-            b = b % a
-    return (a + b)
-
-
-def is_prime(n):
-    """Prime number or not."""
-    d = 2
-    while n % d != 0:
-        d += 1
-    return d == n
+def engine(game):
+    """Game engine function."""
+    name = welcome_user()
+    print(game.DESCRIPTION)
+    count = 0
+    while count < NUMBER_OF_ROUNDS:
+        question, correct_answer = game.make_question()
+        print(question)
+        answer_user = prompt.string('Your answer: ')
+        count = result(answer_user, correct_answer, name, count)
