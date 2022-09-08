@@ -2,7 +2,7 @@
 import random
 
 
-DESCRIPTION = 'What number is missing in the progression?'
+RULES = 'What number is missing in the progression?'
 DIFFERENCE = 10
 MAX_COUNT_NUM = 15
 MAX_VALUE = 100
@@ -27,8 +27,8 @@ def correct_answer(seq):
     return str(seq[index])
 
 
-def make_question():
-    """Generate game question."""
+def question_and_answer():
+    """Generate game question and correct anweer."""
     n = random.randint(5, MAX_COUNT_NUM)
     d = random.randint(1, DIFFERENCE)
     a = random.randint(1, MAX_VALUE)

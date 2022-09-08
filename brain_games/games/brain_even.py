@@ -2,7 +2,7 @@
 import random
 
 
-DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".'
+RULES = 'Answer "yes" if number even otherwise answer "no".'
 MAX_NUM = 100
 
 
@@ -16,8 +16,8 @@ def correct_answer(number):
     return 'yes' if is_even(number) else 'no'
 
 
-def make_question():
-    """Generate game question."""
+def question_and_answer():
+    """Generate game question and correct anweer."""
     number = random.randint(1, MAX_NUM)
     question = f'{number}'
     answer = correct_answer(number)

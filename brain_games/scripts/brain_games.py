@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """brain-games."""
-from brain_games.engine import welcome_user
+from brain_games.engine import start_engine
 
 
 def main():
     """Welcom fun."""
-    welcome_user()
+    start_engine()
 
 
 if __name__ == '__main__':

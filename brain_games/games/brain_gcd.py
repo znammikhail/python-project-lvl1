@@ -2,7 +2,7 @@
 import random
 
 
-DESCRIPTION = 'Find the greatest common divisor of given numbers.'
+RULES = 'Find the greatest common divisor of given numbers.'
 MAX_NUM = 50
 
 
@@ -21,8 +21,8 @@ def correct_answer(number_1, number_2):
     return str(gcd(number_1, number_2))
 
 
-def make_question():
-    """Generate game question."""
+def question_and_answer():
+    """Generate game question and correct anweer."""
     number_1 = random.randint(1, MAX_NUM)
     number_2 = random.randint(1, MAX_NUM)
     question = f'{number_1} {number_2}'
