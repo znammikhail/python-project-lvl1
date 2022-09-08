@@ -3,6 +3,7 @@ import random
 
 
 DESCRIPTION = 'What is the result of the expression?'
+MAX_NUM = 20
 
 
 def correct_answer(number_1, operat, number_2):
@@ -18,9 +19,9 @@ def correct_answer(number_1, operat, number_2):
 
 def make_question():
     """Generate game question."""
-    number_1 = random.randint(1, 20)
-    number_2 = random.randint(1, 20)
+    number_1 = random.randint(1, MAX_NUM)
+    number_2 = random.randint(1, MAX_NUM)
     operat = random.choice(['+', '-', '*'])
-    question = f'Question: {number_1} {operat} {number_2}'
+    question = f'{number_1} {operat} {number_2}'
     answer = correct_answer(number_1, operat, number_2)
     return (question, answer)

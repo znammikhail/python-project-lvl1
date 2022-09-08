@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """brain-games."""
-from brain_games.games_logic import welcome_user
+from brain_games.engine import welcome_user
 
 
 def main():
