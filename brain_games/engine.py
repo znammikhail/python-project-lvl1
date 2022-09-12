@@ -27,4 +27,3 @@ def start_engine(game=None):
                 break
             if count == COUNT_OF_ROUNDS:
                 print(f'Congratulations, {name}!')
-
