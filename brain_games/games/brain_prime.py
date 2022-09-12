@@ -4,6 +4,7 @@ import random
 
 RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 MAX_NUM = 50
+MIN_NUM = 1
 
 
 def is_prime(n):
@@ -21,7 +22,7 @@ def correct_answer(simple):
 
 def question_and_answer():
     """Generate game question and correct anweer."""
-    simple = random.randint(1, MAX_NUM)
+    simple = random.randint(MIN_NUM, MAX_NUM)
     question = f'{simple}'
     answer = correct_answer(simple)
     return (question, answer)
