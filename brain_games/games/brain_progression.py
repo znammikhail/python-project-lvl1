@@ -32,10 +32,13 @@ def correct_answer(seq):
 
 def question_and_answer():
     """Generate game question and correct anweer."""
-    count_num = random.randint(MIN_COUNT_NUM, MAX_COUNT_NUM)
-    difference = random.randint(MIN_DIFFERENCE, MAX_DIFFERENCE)
     initial_term = random.randint(MIN_VALUE, MAX_VALUE)
-    arithmetic_progression = make_progression(initial_term, difference, count_num)
+    difference = random.randint(MIN_DIFFERENCE, MAX_DIFFERENCE)
+    count_num = random.randint(MIN_COUNT_NUM, MAX_COUNT_NUM)
+    arithmetic_progression = make_progression(
+        initial_term,
+        difference,
+        count_num)
     answer, mutable_index = correct_answer(arithmetic_progression)
     arithmetic_progression[mutable_index] = '..'
     question = make_string(arithmetic_progression)
