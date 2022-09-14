@@ -3,22 +3,25 @@ import random
 
 
 RULES = 'What number is missing in the progression?'
-DIFFERENCE = 10
 MAX_COUNT_NUM = 15
+MIN_COUNT_NUM = 15
+MAX_DIFFERENCE = 10
+MIN_DIFFERENCE = 2
 MAX_VALUE = 100
+MIN_VALUE = 10
 
 
-def make_progression(a, d, n):
+def make_progression(initial_term, difference, count_num):
     """Create progression."""
-    a_n = a + d * n + 1
-    ap = list(range(a, a_n, d))
-    return ap
+    n_term = initial_term + difference * count_num + 1
+    arithmetic_progression = list(range(initial_term, n_term, difference))
+    return arithmetic_progression
 
 
-def make_string(ap):
+def make_string(arithmetic_progression):
     """Create string."""
-    ap_string = ' '.join(map(str, ap))
-    return ap_string
+    arithmetic_progression_string = ' '.join(map(str, arithmetic_progression))
+    return arithmetic_progression_string
 
 
 def correct_answer(seq):
@@ -29,12 +32,11 @@ def correct_answer(seq):
 
 def question_and_answer():
     """Generate game question and correct anweer."""
-    n = random.randint(5, MAX_COUNT_NUM)
-    d = random.randint(1, DIFFERENCE)
-    a = random.randint(1, MAX_VALUE)
-    ap = make_progression(a, d, n)
-    answer = correct_answer(ap)
-    ap_string = make_string(ap)
-    ap_string = ap_string.replace(answer, '..')
-    question = f'{ap_string}'
-    return (question, answer)
+    count_num = random.randint(MIN_COUNT_NUM, MAX_COUNT_NUM)
+    difference = random.randint(MIN_DIFFERENCE, MAX_DIFFERENCE)
+    initial_term = random.randint(MIN_VALUE, MAX_VALUE)
+    arithmetic_progression = make_progression(initial_term, difference, count_num)
+    answer = correct_answer(arithmetic_progression)
+    arithmetic_progression_string = make_string(arithmetic_progression)
+    question = arithmetic_progression_string.replace(answer, '..')
+    return question, answer

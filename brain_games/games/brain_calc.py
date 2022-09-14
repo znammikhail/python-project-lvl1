@@ -24,4 +24,4 @@ def question_and_answer():
     operat = random.choice(['+', '-', '*'])
     question = f'{number_1} {operat} {number_2}'
     answer = correct_answer(number_1, operat, number_2)
-    return (question, answer)
+    return question, answer

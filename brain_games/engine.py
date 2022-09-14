@@ -18,7 +18,7 @@ def start_engine(game=None):
             print(f'Question: {question}')
             answer = prompt.string('Your answer: ')
             if answer == correct_answer:
-                print('Corerct!')
+                print('Correct!')
                 count += 1
             else:
                 print(f"'{answer}' is wrong answer ;(. ", end='')

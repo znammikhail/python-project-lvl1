@@ -25,4 +25,4 @@ def question_and_answer():
     simple = random.randint(MIN_NUM, MAX_NUM)
     question = f'{simple}'
     answer = correct_answer(simple)
-    return (question, answer)
+    return question, answer
