@@ -27,7 +27,7 @@ def make_string(arithmetic_progression):
 def correct_answer(seq):
     """Return correct answer."""
     index = random.randint(0, len(seq) - 1)
-    return str(seq[index])
+    return str(seq[index]), index
 
 
 def question_and_answer():
@@ -36,7 +36,7 @@ def question_and_answer():
     difference = random.randint(MIN_DIFFERENCE, MAX_DIFFERENCE)
     initial_term = random.randint(MIN_VALUE, MAX_VALUE)
     arithmetic_progression = make_progression(initial_term, difference, count_num)
-    answer = correct_answer(arithmetic_progression)
-    arithmetic_progression_string = make_string(arithmetic_progression)
-    question = arithmetic_progression_string.replace(answer, '..')
+    answer, mutable_index = correct_answer(arithmetic_progression)
+    arithmetic_progression[mutable_index] = '..'
+    question = make_string(arithmetic_progression)
     return question, answer
