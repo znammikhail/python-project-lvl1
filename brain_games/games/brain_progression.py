@@ -13,8 +13,8 @@ MIN_VALUE = 10
 
 def make_progression(initial_term, difference, count_num):
     """Create progression."""
-    n_term = initial_term + difference * count_num + 1
-    arithmetic_progression = list(range(initial_term, n_term, difference))
+    n_term = initial_term + difference * count_num
+    arithmetic_progression = list(range(initial_term, n_term + 1, difference))
     return arithmetic_progression
 
 
